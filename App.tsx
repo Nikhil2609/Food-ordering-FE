@@ -56,19 +56,6 @@ function App() {
             <Route path="assigned-books" element={<AssignedBooksPage />} />
           </Route>
 
-          {/* User path */}
-          <Route path="/user/*"
-            element={
-              <Suspense fallback={<h1>USER Loading.....</h1>}>
-              <ProtectedRoutes role="user">
-                <UserLayout />
-              </ProtectedRoutes>
-              </Suspense>
-            }
-          >
-            {/* add user nested component here */}
-            <Route path="dashboard" element={<UserDashboardPage />} />
-          </Route>
           {/* No route found redirect to login page */}
           <Route path='*' element={<Navigate to="/login" />} />
         </Routes>
